@@ -3,8 +3,6 @@ class PhoneNumber
    static String clean(String input) 
    {
       // The purpose of this exercise is to practice Groovy regexps by using them to cleanup phone numbers
-
-      // We wrap this around a while so we can break validation as soon as we have a syntactically valid phone
       boolean phone_is_syntactically_valid = false;
       String decoded_phone = "";
       

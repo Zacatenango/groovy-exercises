@@ -67,3 +67,40 @@ class BankAccount
       }
    }
 }
+
+void adjustBalanceConcurrently(BankAccount bankAccount) 
+{
+   Random random = new Random();
+   List<Thread> threads = new ArrayList<Thread>();
+   (1..1000).each 
+   {
+      threads.add(new Thread(
+      {
+         try 
+         {
+            bankAccount.deposit(5)
+            Thread.sleep(random.nextInt(10))
+            bankAccount.withdraw(5)
+         } 
+         catch (InterruptedException ignored) 
+         {
+         } 
+         catch (Exception e) 
+         {
+            print("Exception should not be thrown: ${e.getMessage()}")
+         }
+      }))
+   }
+   threads.each { it.start() }
+   threads.each { it.join() }
+}
+
+BankAccount bankAccount = new BankAccount();
+bankAccount.open();
+bankAccount.deposit(1000);
+for (int i = 0; i < 10; i++) 
+{
+   adjustBalanceConcurrently(bankAccount);
+}
+
+println "Final balance should be 1000, is actually ${bankAccount.getBalance()}";
