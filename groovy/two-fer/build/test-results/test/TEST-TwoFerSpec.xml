@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TwoFerSpec" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-09-12T01:09:36" hostname="tomboyhero" time="0.596">
+  <properties/>
+  <testcase name="No name given" classname="TwoFerSpec" time="0.596">
+    <failure message="Condition not satisfied:&#10;&#10;TwoFer.twoFer() == 'One for you, one for me.'&#10;|      |        |&#10;|      |        false&#10;|      |        1 difference (95% similarity)&#10;|      |        One for you, one for me(-)&#10;|      |        One for you, one for me(.)&#10;|      One for you, one for me&#10;class TwoFer&#10;" type="org.spockframework.runtime.SpockComparisonFailure">Condition not satisfied:
+
+TwoFer.twoFer() == 'One for you, one for me.'
+|      |        |
+|      |        false
+|      |        1 difference (95% similarity)
+|      |        One for you, one for me(-)
+|      |        One for you, one for me(.)
+|      One for you, one for me
+class TwoFer
+
+	at TwoFerSpec.No name given(TwoFerSpec.groovy:7)
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
