@@ -66,12 +66,39 @@ class PhoneNumber
       }
 
       // Part 2: content validation
-      if (phone_is_syntactically_valid) return decoded_phone;
-      return "Not validated";
+      if (phone_is_syntactically_valid)
+      {
+         // Test 1: area code does not start with 0 or 1?
+         // Test 2: local code does not start with 0 or 1?
+         boolean phone_content_is_valid = false;
+         if (decoded_phone[0] != '0' && decoded_phone[0] != '1' &&
+             decoded_phone[3] != '0' && decoded_phone[3] != '1')
+         {
+            phone_content_is_valid = true;
+         }
+
+         // Only return the phone after all these validations have succeeded.
+         // Otherwise, throw an exception
+         if (phone_content_is_valid)
+         {
+            return decoded_phone;
+         }
+         else
+         {
+            //throw new Exception("Semantically invalid phone");
+            return "Exception";
+         }
+      }
+      else
+      {
+         //throw new Exception("Syntactically invalid phone");
+         return "Exception";
+      }
    }
 }
 
 PhoneNumber phonecleaner = new PhoneNumber();
+
 println "";
 println "Cleaning up [2234567890] (trivial case: 10 straight digits) should give [2234567890], gives [${phonecleaner.clean("2234567890")}]";
 println "Cleaning up [(223) 456-7890] (10 digits with standard format) should give [2234567890], gives [${phonecleaner.clean("(223) 456-7890")}]";
