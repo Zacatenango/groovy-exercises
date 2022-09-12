@@ -4,7 +4,7 @@ class BankAccount
    {
       public int balance = 0;
    }
-   def account = null;
+   ActualBankAccount account = null;
       
    // You cannot do any operations before you open the account.
    // An account opens with a balance of 0
@@ -26,7 +26,10 @@ class BankAccount
    // you cannot deposit a negative amount 
    synchronized void deposit(int amount) 
    {
-      //
+      if (account != null && account.balance >= 0)
+      {
+         account.balance += amount;
+      }
    }
 
    // this should decrement the balance
@@ -34,14 +37,22 @@ class BankAccount
    // you cannot withdraw a negative amount 
    synchronized void withdraw(int amount) 
    {
+      if (account != null && amount < account.balance)
+      {
+         account.balance -= amount;
+      }
    }
 
    // returns the current balance
    int getBalance() 
    {
-      return 0
+      return account.balance;
    }
 }
 
-def bank = new BankAccount();
-bank.open();
+BankAccount bankAccount = new BankAccount();
+bankAccount.open()
+bankAccount.deposit(23)
+bankAccount.withdraw(10)
+bankAccount.withdraw(13)
+println "Final balance is ${bankAccount.getBalance()}";
