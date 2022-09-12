@@ -68,6 +68,8 @@ class BankAccount
    }
 }
 
+
+// This function is used to spawn 1000 threads at a time that will attempt to deposit and withdraw concurrently
 void adjustBalanceConcurrently(BankAccount bankAccount) 
 {
    Random random = new Random();
@@ -82,9 +84,7 @@ void adjustBalanceConcurrently(BankAccount bankAccount)
             Thread.sleep(random.nextInt(10))
             bankAccount.withdraw(5)
          } 
-         catch (InterruptedException ignored) 
-         {
-         } 
+         catch (InterruptedException ignored) {} 
          catch (Exception e) 
          {
             print("Exception should not be thrown: ${e.getMessage()}")
@@ -95,6 +95,9 @@ void adjustBalanceConcurrently(BankAccount bankAccount)
    threads.each { it.join() }
 }
 
+// With this function, we run our test
+// We create our bank, open an account, deposit 1000, and have 1000 threads deposit and withdraw 5 concurrently 10 times
+// If mutual exclusion has been implemented correctly, our bank account should have the same initial balance of 1000
 BankAccount bankAccount = new BankAccount();
 bankAccount.open();
 bankAccount.deposit(1000);
@@ -102,5 +105,4 @@ for (int i = 0; i < 10; i++)
 {
    adjustBalanceConcurrently(bankAccount);
 }
-
 println "Final balance should be 1000, is actually ${bankAccount.getBalance()}";
