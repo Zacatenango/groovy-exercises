@@ -39,6 +39,8 @@ class Hamming
 
    public static void main(String[] args)
    {
-      //
+      Hamming hamminger = new Hamming();
+      int distance1 = hamminger.distance("T", "A");
+      println "Hamming distance from T to A is $distance1";
    }
 }
