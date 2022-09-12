@@ -27,7 +27,7 @@ class Hamming
       }
 
       // Are both strands different and a single letter? That means the distance is 1
-      if (strand1.size == 1 && strand2.size == 1 && !strand1.equals(strand2))
+      if (strand1.size() == 1 && strand2.size() == 1 && !strand1.equals(strand2))
       {
          return 1;
       }
