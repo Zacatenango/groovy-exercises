@@ -1,7 +1,12 @@
 class Foo
 {
-   int FOO = 5;
-   void FOO_FOO()
+   static final int FOO = 5;
+   Foo(int foo)
+   {
+      println "Constructor: foo = $foo";
+   }
+
+   void foo()
    {
       // From a Java-like call to a shorthand call, all this is valid Groovy:
       System.out.println("kk = " + FOO);
@@ -26,6 +31,8 @@ class Foo
       // Lists and arrays use Python-style brackets, not C-style braces
       def lista = [ "skvrn", "prvych", "povrch" ];
       def mapa = [ "skvrn":10, "prvych":20, "povrch":30 ];
+
+
 
       // Groovy can evaluate expressions within a double quote string
       println "lista = [ '${lista[0]}', '${lista[1]}', '${lista[2]}' ]";
@@ -75,9 +82,9 @@ class Foo
       }
       println "2/5 = ${divide(2,5)}";
 
-      // As in Javascript, closures are often used to implement callback functions APIs and libraries
-      def printsomething = { println "Print something" };
-      imaginary_event_processor_that_receives_a_callback(printsomething);
+      // As in Javascript, closures are often used in APIs and libraries to implement callbacks
+      def callbackclojure = { println "Print something" };
+      imaginary_event_processor_that_does_stuff_and_then_runs_yr_callback(callbackclojure);
 
       // As in old school Javascript, closures can see the parent scope
       String sooperseekrit = "Hhhhhhhhhhhhhhh";
@@ -85,8 +92,8 @@ class Foo
       closure_that_can_see_the_secret();
 
       // Functions can be called out of a dynamically generated string
-      def result1 = "reciprocal"(3);
       skvrn = "reciprocal";
+      def result1 = "reciprocal"(3);
       def result2 = "$skvrn"(3);
       println "First dynamic call gave $result1";
       println "Second dynamic call gave $result2";
@@ -107,11 +114,11 @@ class Foo
    }
 
    def reciprocal(int X) { (X != 0)? 1/X: "undefined"; }
-   void imaginary_event_processor_that_receives_a_callback(param_function)
+   void imaginary_event_processor_that_does_stuff_and_then_runs_yr_callback(param_function)
    {
       param_function();
    }
 }
 
-Foo foo = new Foo();
-foo.FOO_FOO();
+Foo foo = new Foo(Foo.FOO);
+foo.foo();
