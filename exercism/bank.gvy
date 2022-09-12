@@ -24,35 +24,46 @@ class BankAccount
    // this should increment the balance
    // you cannot deposit into a closed account
    // you cannot deposit a negative amount 
+   // Failure to meet any of such conditions should throw an exception
    synchronized void deposit(int amount) 
    {
-      if (account != null && account.balance >= 0)
+      if (account != null && account.balance >= 0 && amount >= 0)
       {
          account.balance += amount;
+      }
+      else
+      {
+         throw new Exception("ERROR: Deposit failed")
       }
    }
 
    // this should decrement the balance
    // you cannot withdraw into a closed account
    // you cannot withdraw a negative amount 
+   // Attempting to overdraw must throw an exception
    synchronized void withdraw(int amount) 
    {
-      if (account != null && amount < account.balance)
+      if (account != null && amount <= account.balance && amount >= 0)
       {
          account.balance -= amount;
+      }
+      else
+      {
+         throw new Exception("ERROR: Withdrawal failed");
       }
    }
 
    // returns the current balance
+   // Attempting to get balance of closed account should throw exception
    int getBalance() 
    {
-      return account.balance;
+      if (account != null)
+      {
+         return account.balance;
+      }
+      else
+      {
+         throw new Exception("ERROR: Balance retreival failed");
+      }
    }
 }
-
-BankAccount bankAccount = new BankAccount();
-bankAccount.open()
-bankAccount.deposit(23)
-bankAccount.withdraw(10)
-bankAccount.withdraw(13)
-println "Final balance is ${bankAccount.getBalance()}";
