@@ -74,6 +74,7 @@ void adjustBalanceConcurrently(BankAccount bankAccount)
 {
    Random random = new Random();
    List<Thread> threads = new ArrayList<Thread>();
+   // A groovier way of specifying a numeric For
    (1..1000).each 
    {
       threads.add(new Thread(
