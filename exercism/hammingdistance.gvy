@@ -20,7 +20,7 @@ class Hamming
          throw new ArithmeticException("ERROR: Strands must be of same length");
       }
 
-      // Are both strands equal? Automatically that means the distance is 0, so we output 0 and ax the function
+      // Trivial case: are both strands equal? Automatically that means the distance is 0, so we output 0 and ax the function
       if (strand1.equals(strand2))
       {
          return 0;
