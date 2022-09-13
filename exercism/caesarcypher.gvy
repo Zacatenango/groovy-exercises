@@ -35,7 +35,9 @@ class RotationalCipher
 
             // Then we convert our cipher offset back into a character
             // taking A or a as base depending on our source character
-            char cipher_char = ciphertext_chars[X].isUpperCase()? (char)'A' + cipher_offset: (char)'a' + cipher_offset;
+            char cipher_char = ciphertext_chars[X].isUpperCase()? 
+               (char)'A' + cipher_offset: 
+               (char)'a' + cipher_offset;
 
             // Then we save our cipher character into the array
             ciphertext_chars[X] = cipher_char;
