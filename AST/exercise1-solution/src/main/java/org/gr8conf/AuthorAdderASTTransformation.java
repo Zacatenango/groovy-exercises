@@ -27,11 +27,14 @@ import org.codehaus.groovy.transform.GroovyASTTransformation;
 import java.util.List;
 
 @GroovyASTTransformation(phase= CompilePhase.CONVERSION)
-public class AuthorAdderASTTransformation extends AbstractASTTransformation {
+public class AuthorAdderASTTransformation extends AbstractASTTransformation 
+{
     @Override
-    public void visit(final ASTNode[] nodes, final SourceUnit source) {
+    public void visit(final ASTNode[] nodes, final SourceUnit source) 
+    {
         List<ClassNode> classes = source.getAST().getClasses();
-        for (ClassNode node: classes) {
+        for (ClassNode node: classes) 
+        {
             node.addField(
                     "$AUTHOR",
                     ACC_PUBLIC | ACC_STATIC | ACC_FINAL,
