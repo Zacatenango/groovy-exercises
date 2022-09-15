@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.gr8conf.AuthorAdderASTTransformationTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-09-15T20:15:34" hostname="tomboyhero" time="0.013">
+<testsuite name="org.gr8conf.AuthorAdderASTTransformationTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-09-15T20:34:33" hostname="tomboyhero" time="0.013">
   <properties/>
   <testcase name="testThatAuthorExists" classname="org.gr8conf.AuthorAdderASTTransformationTest" time="0.013">
     <failure message="groovy.lang.MissingPropertyException: No such property: author for class: org.gr8conf.AuthorAdderASTTransformationTest" type="groovy.lang.MissingPropertyException">groovy.lang.MissingPropertyException: No such property: author for class: org.gr8conf.AuthorAdderASTTransformationTest
