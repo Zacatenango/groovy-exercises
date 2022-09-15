@@ -15,5 +15,6 @@
  */
 package org.gr8conf;
 
-public class AuthorAdderASTTransformation {
+public class AuthorAdderASTTransformation 
+{
 }
