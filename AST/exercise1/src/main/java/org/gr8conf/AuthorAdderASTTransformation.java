@@ -61,7 +61,7 @@ package org.gr8conf;
        children: the condition, the if's body, and the else's body, without storing any literal
        "if" or a literal expression in the tree.
 
-       In this sense, an AST transformation referse to an operation performed on the AST where
+       In this sense, an AST transformation refers to an operation performed on the AST where
        we manually tamper with the program's code before the AST undergoes the semantic analysis
        step (the step where variable names are tested for validity and classes are resolved).
        An example of a simple AST transformation would be adding an author field to all the
