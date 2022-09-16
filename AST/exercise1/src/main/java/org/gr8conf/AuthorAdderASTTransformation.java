@@ -66,7 +66,7 @@ package org.gr8conf;
        step (the step where variable names are tested for validity and classes are resolved).
        An example of a simple AST transformation would be adding an author field to all the
        classes of the program: instead of manually hunting and pecking all of them, we run the
-       initial AST through an AST transformation that adds that field automatically. An AST,
+       initial AST through an AST transformation that adds that field to all classes. An AST,
        therefore, can be seen as a way of dynamically rewriting a program's source code, or
        as a way to implement the class/function annotation feature of many programming
        languages.
