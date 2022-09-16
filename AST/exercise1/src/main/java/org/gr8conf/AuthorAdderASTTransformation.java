@@ -92,7 +92,7 @@ package org.gr8conf;
    Groovy and is in src/test/groovy
    
    To make the Groovy compiler pick up our AST, we must add a file on src/main/resources/META-INF/services 
-   called org.codehaus.groovy.transform.ASTTransformation that contains:
+   called org.codehaus.groovy.transform.ASTTransformation that contains our AST's class's fully qualified name:
    org.gr8conf.AuthorAdderASTTransformation
    Doing so will tell Groovy to pick up an AST transformation defined in class org.gr8conf.AuthorAdderASTTransformation
    (which is this class) and apply it as a compilation hook */
