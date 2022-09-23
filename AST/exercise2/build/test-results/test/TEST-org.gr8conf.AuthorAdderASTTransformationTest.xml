@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.gr8conf.AuthorAdderASTTransformationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-09-23T19:32:29" hostname="tomboyhero" time="0.523">
+<testsuite name="org.gr8conf.AuthorAdderASTTransformationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-09-23T21:54:03" hostname="tomboyhero" time="0.103">
   <properties/>
-  <testcase name="testASTTransformationShouldBeDebuggableFromIDE" classname="org.gr8conf.AuthorAdderASTTransformationTest" time="0.523"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="testThatAuthorExists" classname="org.gr8conf.AuthorAdderASTTransformationTest" time="0.005"/>
+  <testcase name="testASTTransformationShouldBeDebuggableFromIDE" classname="org.gr8conf.AuthorAdderASTTransformationTest" time="0.097"/>
+  <system-out><![CDATA[Constructor: foo = 5
+Attribute foo.BAR = bar
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
